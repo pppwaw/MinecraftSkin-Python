@@ -36,4 +36,12 @@ def post(request):
             if capeurl == None:
                 return http.Http404()
             return http.HttpResponseRedirect(capeurl)
+    elif request.POST["get"] == "all":
+        try:
+            alljson = mc.get_skin_and_cape(uuid)
+        except:
+            uuid = mc.get_uuid(name)
+            alljson = mc.get_skin_and_cape(uuid)
+        finally:
+            return http.JsonResponse(alljson)
     return http.HttpResponse()

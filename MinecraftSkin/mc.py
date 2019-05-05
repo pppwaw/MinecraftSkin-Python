@@ -23,16 +23,15 @@ def get_cape(uuid):
     if uuid == None:
         raise ValueError
     profile = json.loads(requests.get("https://sessionserver.mojang.com/session/minecraft/profile/{0}".format(uuid)).text)
-
-    profile=json.loads(base64.b64decode(profile["properties"][0]["value"]))
     try:
+        profile=json.loads(base64.b64decode(profile["properties"][0]["value"]))
         cape = profile["textures"]["CAPE"]["url"]
     except: return None
     else: return cape
 def get_skin_and_cape(uuid):
     skin=get_skin(uuid)
     cape=get_cape(uuid)
-    return json.dumps({"skin":skin,"cape":cape})
+    return {"skin":skin,"cape":cape}
 def is_Alex(uuid):
     return (isEven(uuid[7]) != isEven(uuid[16 + 7])) != (isEven(uuid[15]) != isEven(uuid[16 + 15]))
 def isEven(c):
