@@ -21,3 +21,8 @@ post要post到ip:端口/api上，例如
 get|这个参数决定了要调用的功能|get=all
 uuid|和name二选一，这个参数决定了要调用的功能|uuid=a216b4dc4a6344e193169ca39bfb8356
 name|和uuid二选一这个参数决定了要调用的功能|name=pppwaw
+=======
+MinecraftSkin-Python
+我自己的一个小程序，旨在复原skins.minecraft.net
+这是python版，如果您重构了其他的语言版本，请联系我，我qq250445577，谢谢
+>>>>>>> e34160a800e8e95c280b66879bf36f3fdee4ed5b
